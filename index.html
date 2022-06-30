@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bookshelf Apps</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="jumbotron" id="top">
+                <h1>BOOKSHELF APPS</h1>
+            </div>
+        </header>
+        <main>
+            <div class="tabcontent" id="home">
+                <section class="input_section card">
+                    <h2>Masukkan Buku Baru</h2>
+                    <form id="inputBook">
+                        <div class="input">
+                            <label for="inputBookTitle">Judul</label>
+                            <input id="inputBookTitle" type="text" required>
+                        </div>
+                        <div class="input">
+                            <label for="inputBookAuthor">Penulis</label>
+                            <input id="inputBookAuthor" type="text" maxlength="20" required>
+                        </div>
+                        <div class="input">
+                            <label for="inputBookYear">Tahun Terbit</label>
+                            <input id="inputBookYear" type="text" minlength="4" maxlength="4" required>
+                        </div>
+                        <div class="input_inline">
+                            <label for="inputBookIsComplete">Selesai dibaca</label>
+                            <input id="inputBookIsComplete" type="checkbox">
+                        </div>
+                        <button class="button_style orange" id="bookSubmit" type="submit">Masukkan buku ke daftar
+                        </button>
+                    </form>
+                </section>
+            	<div class="uncompleted">
+            		<section class="book_shelf card">
+            		    <h2>Belum Selesai Dibaca Terakhir</h2>
+            		    <div id="incompleteBookshelfLast" class="book_list">
+            		        <!-- <article class="book_item">
+            		            <h3>Book Title</h3>
+            		            <p>Penulis: John Doe</p>
+            		            <p>Tahun: 2002</p>
+
+            		            <div class="action">
+            		                <button class="done">Selesai dibaca</button>
+            		                <button class="delete">Hapus buku</button>
+            		            </div>
+            		        </article> -->
+            		    </div>
+            		    <button class="button_style show_content orange" onclick="showDiv('uncompleted-list')">Lihat Semua</button>
+            		</section>
+            	</div>
+            	<div class="completed">                		
+            		<section class="book_shelf card">
+            		    <h2>Selesai Dibaca Terakhir</h2>
+            		    <div id="completeBookshelfLast" class="book_list">
+            		        <!-- <article class="book_item">
+            		            <h3>Book Title</h3>
+            		            <p>Penulis: John Doe</p>
+            		            <p>Tahun: 2002</p>
+            		            
+            		            <div class="action">
+            		                <button class="button_style undo">Belum selesai di Baca</button>
+            		                <button class="button_style red">Hapus buku</button>
+            		            </div>
+            		        </article> -->
+            		    </div>
+            		    <button class="button_style orange" onclick="showDiv('completed-list')">Lihat Semua</button>
+            		</section>
+            	</div>
+            </div>
+            <article class="tabcontent" id="uncompleted-list">
+                <section class="book_shelf card">
+                    <h2>Belum Selesai Dibaca</h2>
+                    <button class="button_style show_content orange" onclick="showDiv('home')">Kembali</button>
+                    <div id="incompleteBookshelfList" class="book_list">
+
+                    </div>
+                </section>
+                <a class="scroll_up" href="#top"></a>
+            </article>
+            <article class="tabcontent" id="completed-list">
+                <section class="book_shelf card">
+                    <h2>Selesai Dibaca</h2>
+                    <button class="button_style show_content orange" onclick="showDiv('home')">Kembali</button>
+                    <div id="completeBookshelfList" class="book_list">
+
+                    </div>
+                </section>
+                <a class="scroll_up" href="#top"></a>
+            </article>
+            <section class="input_section search card" id="searchContainer">
+                <h2>Cari Buku</h2>
+                <form id="searchBook">
+                    <div class="input">
+                        <label for="inputBookTitleSearch">Judul Buku</label>
+                        <input id="inputBookTitleSearch" type="text" required>
+                    </div>
+                    <button class="button_style orange" id="bookSearch" type="submit">Cari Buku</button>
+                </form>
+            </section>
+            <article class="tabcontent" id="search-list">
+                <section class="book_shelf card">
+                    <h2>Hasil Pencarian</h2>
+                    <button class="button_style show_content orange" onclick="showDiv('home')">Kembali</button>
+                    <div id="searchBookshelfList" class="book_list">
+
+                    </div>
+                </section>
+                <a class="scroll_up" href="#top"></a>
+            </article>
+        </main>
+        <footer>
+            <p>Submission Aplikasi Pengelolaan Data Menggunakan DOM Dan Web Storage &#169; 2022, Dicoding Academy</p>
+        </footer>
+        <script src="js/tabcontent.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/storage.js"></script>
+    </body>
+</html>
